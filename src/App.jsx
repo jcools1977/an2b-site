@@ -1,5 +1,4 @@
-// App.jsx (Full updated version with WaitlistForm included)
-
+// src/App.jsx
 import WaitlistForm from "./components/WaitlistForm";
 
 export default function HomePage() {
@@ -12,8 +11,19 @@ export default function HomePage() {
           AN2B is the AI Operating System for B2B Commerce. Connecting suppliers, buyers, and governments through intelligent procurement, instant quoting, and seamless fulfillment.
         </p>
         <div className="flex justify-center gap-4">
-          <button className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200">Join the Waitlist</button>
-          <button className="border border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black">Learn More</button>
+          {/* Anchor that jumps to the form */}
+          <a
+            href="#waitlist"
+            className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200"
+          >
+            Join the Waitlist
+          </a>
+          <a
+            href="#waitlist"
+            className="border border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black"
+          >
+            Learn More
+          </a>
         </div>
       </section>
 
@@ -44,17 +54,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Waitlist Section with Form */}
-      <section className="px-6 py-24 bg-[#0f172a] text-center max-w-4xl mx-auto">
+      {/* Waitlist Section WITH id for anchor scrolling */}
+      <section
+        id="waitlist"
+        className="px-6 py-24 bg-[#0f172a] text-center max-w-4xl mx-auto"
+      >
         <h2 className="text-4xl font-bold mb-4">The Future of B2B Starts Here.</h2>
-        <p className="text-gray-300 mb-8">Be among the first to deploy AN2B in your industry. Suppliers, distributors, and investors welcome.</p>
+        <p className="text-gray-300 mb-8">
+          Be among the first to deploy AN2B in your industry. Suppliers, distributors, and investors welcome.
+        </p>
 
         <WaitlistForm />
       </section>
 
       {/* Footer */}
       <footer className="text-center text-gray-500 py-10 text-sm">
-        AN2B © 2025 &middot; The AI Operating System for B2B Commerce
+        AN2B © 2025 · The AI Operating System for B2B Commerce
       </footer>
     </main>
   );

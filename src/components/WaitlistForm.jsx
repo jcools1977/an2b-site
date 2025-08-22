@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import { supabase } from '../lib/supabaseClient';
+// src/components/WaitlistForm.jsx
+import { useState } from "react";
+import { supabase } from "../lib/supabaseClient";
 
 const WaitlistForm = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -11,30 +12,27 @@ const WaitlistForm = () => {
     e.preventDefault();
     setError(null);
 
-    // Sanity check the envs are present at runtime
     if (!import.meta.env.VITE_SUPABASE_URL || !import.meta.env.VITE_SUPABASE_ANON_KEY) {
-      setError('Missing Supabase environment variables.');
+      setError("Missing Supabase environment variables.");
       return;
     }
-
     try {
       setLoading(true);
 
-      // Basic validation
       if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
-        throw new Error('Please enter a valid email.');
+        throw new Error("Please enter a valid email.");
       }
 
       const { error: insertError } = await supabase
-        .from('waitlist')
+        .from("waitlist")
         .insert({ email });
 
       if (insertError) throw insertError;
 
       setSubmitted(true);
-      setEmail('');
+      setEmail("");
     } catch (err) {
-      setError(err.message || 'Something went wrong.');
+      setError(err.message || "Something went wrong.");
     } finally {
       setLoading(false);
     }
@@ -61,7 +59,7 @@ const WaitlistForm = () => {
             disabled={loading}
             className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 disabled:opacity-60"
           >
-            {loading ? 'Submitting…' : 'Join the Waitlist'}
+            {loading ? "Submitting…" : "Join the Waitlist"}
           </button>
         </form>
       )}
