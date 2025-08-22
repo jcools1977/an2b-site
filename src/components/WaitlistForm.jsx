@@ -1,38 +1,43 @@
 import { useState } from 'react';
+import { supabase } from '../lib/supabaseClient';
 
 const WaitlistForm = () => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
+    setLoading(true);
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/rest/v1/waitlist`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          apikey: import.meta.env.VITE_SUPABASE_ANON_KEY,
-          Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-        },
-        body: JSON.stringify({ email }),
-      });
+      if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+        throw new Error('Please enter a valid email.');
+      }
 
-      if (!res.ok) throw new Error('Failed to join waitlist.');
+      const { error } = await supabase
+        .from('waitlist')
+        .insert({ email });
+
+      if (error) throw error;
 
       setSubmitted(true);
       setEmail('');
     } catch (err) {
       setError(err.message || 'Something went wrong.');
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 text-center">
+    <div className="max-w-md mx-auto mt-6 text-center">
       {submitted ? (
-        <p className="text-green-400 text-lg font-medium">✅ You're on the waitlist!</p>
+        <p className="text-green-400 text-lg font-medium">
+          ✅ You’re on the waitlist. Thank you!
+        </p>
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
@@ -45,9 +50,10 @@ const WaitlistForm = () => {
           />
           <button
             type="submit"
-            className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200"
+            disabled={loading}
+            className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 disabled:opacity-60"
           >
-            Join the Waitlist
+            {loading ? 'Submitting…' : 'Join the Waitlist'}
           </button>
         </form>
       )}
