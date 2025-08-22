@@ -1,3 +1,7 @@
+// App.jsx (Full updated version with WaitlistForm included)
+
+import WaitlistForm from "./components/WaitlistForm";
+
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white font-sans">
@@ -40,11 +44,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Waitlist Section with Form */}
       <section className="px-6 py-24 bg-[#0f172a] text-center max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold mb-4">The Future of B2B Starts Here.</h2>
         <p className="text-gray-300 mb-8">Be among the first to deploy AN2B in your industry. Suppliers, distributors, and investors welcome.</p>
-        <button className="bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200 text-lg">Join the Waitlist</button>
+
+        <WaitlistForm />
       </section>
 
       {/* Footer */}
