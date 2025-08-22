@@ -10,18 +10,26 @@ const WaitlistForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
-    setLoading(true);
+
+    // Sanity check the envs are present at runtime
+    if (!import.meta.env.VITE_SUPABASE_URL || !import.meta.env.VITE_SUPABASE_ANON_KEY) {
+      setError('Missing Supabase environment variables.');
+      return;
+    }
 
     try {
+      setLoading(true);
+
+      // Basic validation
       if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
         throw new Error('Please enter a valid email.');
       }
 
-      const { error } = await supabase
+      const { error: insertError } = await supabase
         .from('waitlist')
         .insert({ email });
 
-      if (error) throw error;
+      if (insertError) throw insertError;
 
       setSubmitted(true);
       setEmail('');
