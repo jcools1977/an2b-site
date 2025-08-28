@@ -2,52 +2,43 @@ import WaitlistForm from "./components/WaitlistForm";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white font-sans">
-      {/* Hero Section */}
-      <section className="px-6 py-32 text-center max-w-4xl mx-auto">
-        <div className="flex flex-col items-center mb-10">
+    <main className="min-h-screen bg-black text-white font-sans">
+      {/* Hero Section (wavy graphic) */}
+      <section className="px-6 py-20 text-center max-w-3xl mx-auto">
+        <div className="relative bg-no-repeat bg-center bg-cover rounded-xl shadow-xl p-12" style={{ backgroundImage: "url('/logos/hero_image_full.png')" }}>
           <img
             src="/logos/an2b_logo_final_transparent.png"
             alt="AN2B Logo"
-            className="w-24 h-24 mb-4"
+            className="w-16 h-16 mx-auto mb-4"
           />
-          <h1 className="text-4xl font-extrabold tracking-wide">AN2B</h1>
+          <h1 className="text-4xl font-extrabold tracking-wide mb-4">AN2B</h1>
+          <h2 className="text-3xl font-bold mb-6 leading-tight">
+            From Any<br />to Business.
+          </h2>
+          <p className="text-base text-gray-300 max-w-xl mx-auto mb-8">
+            AN2B is the AI Operating System for B2B Commerce — connecting
+            suppliers, buyers, and governments through intelligent procurement,
+            instant quoting, and seamless fulfillment.
+          </p>
+          <div className="flex justify-center gap-4 flex-wrap">
+            <a
+              href="#waitlist"
+              className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-full font-semibold"
+            >
+              Join the Waitlist
+            </a>
+            <a
+              href="#learn"
+              className="border border-white hover:bg-white hover:text-black px-6 py-3 rounded-full font-semibold"
+            >
+              Learn More
+            </a>
+          </div>
         </div>
-        <h2 className="text-5xl font-bold mb-6 leading-tight">
-          From Any<br />to Business.
-        </h2>
-        <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-10">
-          AN2B is the AI Operating System for B2B Commerce — connecting
-          suppliers, buyers, and governments through intelligent procurement,
-          instant quoting, and seamless fulfillment.
-        </p>
-        <div className="flex justify-center gap-4 flex-wrap">
-          <a
-            href="#waitlist"
-            className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-full font-semibold"
-          >
-            Join the Waitlist
-          </a>
-          <a
-            href="#learn"
-            className="border border-white hover:bg-white hover:text-black px-6 py-3 rounded-full font-semibold"
-          >
-            Learn More
-          </a>
-        </div>
-      </section>
-
-      {/* Visual Hero (optional background image) */}
-      <section className="text-center mb-24">
-        <img
-          src="/logos/hero_image_full.png"
-          alt="AN2B Hero"
-          className="mx-auto w-full max-w-3xl rounded-xl shadow-xl"
-        />
       </section>
 
       {/* Learn More Section */}
-      <section id="learn" className="px-6 py-24 text-center max-w-3xl mx-auto bg-[#111827] rounded-xl">
+      <section id="learn" className="px-6 py-32 text-center max-w-3xl mx-auto bg-[#111827] rounded-xl">
         <h2 className="text-3xl font-semibold mb-6">Learn More About AN2B</h2>
         <p className="text-gray-300 text-lg leading-relaxed">
           AN2B is reimagining B2B commerce. For too long, procurement has been
@@ -58,6 +49,9 @@ export default function HomePage() {
           simple, smart, and built for growth.
         </p>
       </section>
+
+      {/* Spacer */}
+      <div className="h-24" />
 
       {/* Waitlist Section */}
       <section id="waitlist" className="px-6 py-24 bg-[#0f172a] text-center max-w-4xl mx-auto">
