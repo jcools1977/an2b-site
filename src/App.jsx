@@ -2,23 +2,17 @@ import WaitlistForm from "./components/WaitlistForm";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-black text-white font-sans">
-
-      {/* HERO SECTION (clean full-height image with top spacing) */}
 		<section className="px-6 pt-32 pb-20 text-center max-w-5xl mx-auto">
-		  <div
-			className="relative bg-no-repeat bg-center bg-cover rounded-xl shadow-xl"
-			style={{
-			  backgroundImage: "url('/logos/hero_image_new.png')",
-			  backgroundSize: "cover",
-			  backgroundPosition: "center",
-			  minHeight: "65vh"
-			}}
-		  >
-			<div className="absolute inset-0 bg-black bg-opacity-40 rounded-xl" />
-			<div className="relative z-10 py-[42vw] md:py-[24vw] px-6" />
+		  <div className="relative rounded-xl shadow-xl overflow-hidden">
+			<img
+			  src="/logos/hero_image_new.png"
+			  alt="AN2B Hero"
+			  className="w-full object-cover"
+			  style={{ maxHeight: "80vh" }}
+			/>
 		  </div>
 		</section>
+
 
 
       {/* LEARN MORE SECTION */}
