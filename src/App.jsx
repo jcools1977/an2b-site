@@ -4,32 +4,14 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-black text-white font-sans">
 
-      {/* HERO SECTION with background image and overlay */}
-      <section className="px-6 py-20 text-center max-w-3xl mx-auto">
+      {/* HERO SECTION (image only, no buttons) */}
+      <section className="px-6 pt-28 pb-20 text-center max-w-3xl mx-auto">
         <div
           className="relative bg-no-repeat bg-center bg-cover rounded-xl shadow-xl"
           style={{ backgroundImage: "url('/logos/hero_image_full.png')" }}
         >
-          {/* Dark overlay behind buttons */}
           <div className="absolute inset-0 bg-black bg-opacity-50 rounded-xl" />
-
-          {/* CTA buttons (Join the Waitlist + Learn More) */}
-          <div className="relative z-10 py-28 px-8">
-            <div className="flex justify-center gap-4 mt-4 flex-wrap">
-              <a
-                href="#waitlist"
-                className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-full font-semibold"
-              >
-                Join the Waitlist
-              </a>
-              <a
-                href="#learn"
-                className="border border-white hover:bg-white hover:text-black px-6 py-3 rounded-full font-semibold"
-              >
-                Learn More
-              </a>
-            </div>
-          </div>
+          <div className="relative z-10 py-48 px-6" />
         </div>
       </section>
 
