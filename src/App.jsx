@@ -3,42 +3,37 @@ import WaitlistForm from "./components/WaitlistForm";
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-black text-white font-sans">
-      {/* Hero Section (wavy graphic) */}
+      
+      {/* Hero Section (Image Only + Buttons) */}
       <section className="px-6 py-20 text-center max-w-3xl mx-auto">
-        <div className="relative bg-no-repeat bg-center bg-cover rounded-xl shadow-xl p-12" style={{ backgroundImage: "url('/logos/hero_image_full.png')" }}>
-          <img
-            src="/logos/an2b_logo_final_transparent.png"
-            alt="AN2B Logo"
-            className="w-16 h-16 mx-auto mb-4"
-          />
-          <h1 className="text-4xl font-extrabold tracking-wide mb-4">AN2B</h1>
-          <h2 className="text-3xl font-bold mb-6 leading-tight">
-            From Any<br />to Business.
-          </h2>
-          <p className="text-base text-gray-300 max-w-xl mx-auto mb-8">
-            AN2B is the AI Operating System for B2B Commerce — connecting
-            suppliers, buyers, and governments through intelligent procurement,
-            instant quoting, and seamless fulfillment.
-          </p>
-          <div className="flex justify-center gap-4 flex-wrap">
-            <a
-              href="#waitlist"
-              className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-full font-semibold"
-            >
-              Join the Waitlist
-            </a>
-            <a
-              href="#learn"
-              className="border border-white hover:bg-white hover:text-black px-6 py-3 rounded-full font-semibold"
-            >
-              Learn More
-            </a>
+        <div
+          className="relative bg-no-repeat bg-center bg-cover rounded-xl shadow-xl"
+          style={{ backgroundImage: "url('/logos/hero_image_full.png')" }}
+        >
+          <div className="py-24 px-8 backdrop-blur-sm rounded-xl bg-black bg-opacity-30">
+            <div className="flex justify-center gap-4 mt-4 flex-wrap">
+              <a
+                href="#waitlist"
+                className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-full font-semibold"
+              >
+                Join the Waitlist
+              </a>
+              <a
+                href="#learn"
+                className="border border-white hover:bg-white hover:text-black px-6 py-3 rounded-full font-semibold"
+              >
+                Learn More
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Learn More Section */}
-      <section id="learn" className="px-6 py-32 text-center max-w-3xl mx-auto bg-[#111827] rounded-xl">
+      <section
+        id="learn"
+        className="px-6 py-32 text-center max-w-3xl mx-auto bg-[#111827] rounded-xl"
+      >
         <h2 className="text-3xl font-semibold mb-6">Learn More About AN2B</h2>
         <p className="text-gray-300 text-lg leading-relaxed">
           AN2B is reimagining B2B commerce. For too long, procurement has been
@@ -54,7 +49,10 @@ export default function HomePage() {
       <div className="h-24" />
 
       {/* Waitlist Section */}
-      <section id="waitlist" className="px-6 py-24 bg-[#0f172a] text-center max-w-4xl mx-auto">
+      <section
+        id="waitlist"
+        className="px-6 py-24 bg-[#0f172a] text-center max-w-4xl mx-auto"
+      >
         <h2 className="text-4xl font-bold mb-4">The Future of B2B Starts Here.</h2>
         <p className="text-gray-300 mb-8">
           Be among the first to deploy AN2B in your industry. Suppliers,
@@ -66,7 +64,11 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="text-center text-gray-500 py-10 text-sm">
         <div className="flex items-center justify-center gap-2 mb-2">
-          <img src="/logos/favicon_32x32.png" alt="AN2B icon" className="w-5 h-5" />
+          <img
+            src="/logos/favicon_32x32.png"
+            alt="AN2B icon"
+            className="w-5 h-5"
+          />
           <span>AN2B © 2025 · The AI Operating System for B2B Commerce</span>
         </div>
       </footer>
