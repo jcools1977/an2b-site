@@ -3,14 +3,18 @@ import WaitlistForm from "./components/WaitlistForm";
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-black text-white font-sans">
-      
-      {/* Hero Section (Image Only + Buttons) */}
+
+      {/* HERO SECTION with background image and overlay */}
       <section className="px-6 py-20 text-center max-w-3xl mx-auto">
         <div
           className="relative bg-no-repeat bg-center bg-cover rounded-xl shadow-xl"
           style={{ backgroundImage: "url('/logos/hero_image_full.png')" }}
         >
-          <div className="py-24 px-8 backdrop-blur-sm rounded-xl bg-black bg-opacity-30">
+          {/* Dark overlay behind buttons */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 rounded-xl" />
+
+          {/* CTA buttons (Join the Waitlist + Learn More) */}
+          <div className="relative z-10 py-28 px-8">
             <div className="flex justify-center gap-4 mt-4 flex-wrap">
               <a
                 href="#waitlist"
@@ -29,7 +33,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Learn More Section */}
+      {/* LEARN MORE SECTION */}
       <section
         id="learn"
         className="px-6 py-32 text-center max-w-3xl mx-auto bg-[#111827] rounded-xl"
@@ -45,10 +49,10 @@ export default function HomePage() {
         </p>
       </section>
 
-      {/* Spacer */}
+      {/* SPACER */}
       <div className="h-24" />
 
-      {/* Waitlist Section */}
+      {/* WAITLIST SECTION */}
       <section
         id="waitlist"
         className="px-6 py-24 bg-[#0f172a] text-center max-w-4xl mx-auto"
@@ -61,7 +65,7 @@ export default function HomePage() {
         <WaitlistForm />
       </section>
 
-      {/* Footer */}
+      {/* FOOTER */}
       <footer className="text-center text-gray-500 py-10 text-sm">
         <div className="flex items-center justify-center gap-2 mb-2">
           <img
