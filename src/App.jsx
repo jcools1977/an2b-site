@@ -11,15 +11,16 @@ export default function HomePage() {
           AN2B is the AI Operating System for B2B Commerce. Connecting suppliers, buyers, and governments through intelligent procurement, instant quoting, and seamless fulfillment.
         </p>
         <div className="flex justify-center gap-4">
-          {/* Anchor that jumps to the form */}
+          {/* Scroll to Waitlist */}
           <a
             href="#waitlist"
             className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200"
           >
             Join the Waitlist
           </a>
+          {/* Scroll to Learn More */}
           <a
-            href="#waitlist"
+            href="#learn"
             className="border border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black"
           >
             Learn More
@@ -54,16 +55,25 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Learn More Section (Elevator Pitch) */}
+      <section id="learn" className="px-6 py-24 text-center max-w-3xl mx-auto bg-[#111827]">
+        <h2 className="text-3xl font-semibold mb-6">Learn More About AN2B</h2>
+        <p className="text-gray-300 text-lg leading-relaxed">
+          AN2B is reimagining B2B commerce. For too long, procurement has been slow,
+          confusing, and controlled by a few giants. AN2B makes buying and selling
+          between businesses as effortless as shopping online. Whether you’re a
+          supplier or a buyer, AN2B helps you connect, compare, and transact faster
+          than ever. It’s the future of business-to-business — simple, smart, and
+          built for growth.
+        </p>
+      </section>
+
       {/* Waitlist Section WITH id for anchor scrolling */}
-      <section
-        id="waitlist"
-        className="px-6 py-24 bg-[#0f172a] text-center max-w-4xl mx-auto"
-      >
+      <section id="waitlist" className="px-6 py-24 bg-[#0f172a] text-center max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold mb-4">The Future of B2B Starts Here.</h2>
         <p className="text-gray-300 mb-8">
           Be among the first to deploy AN2B in your industry. Suppliers, distributors, and investors welcome.
         </p>
-
         <WaitlistForm />
       </section>
 
