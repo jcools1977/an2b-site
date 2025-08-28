@@ -8,11 +8,12 @@ export default function HomePage() {
       <section className="px-6 pt-32 pb-20 text-center max-w-5xl mx-auto">
         <div className="relative rounded-xl shadow-xl overflow-hidden">
           <img
-            src="/logos/hero_image_new.png"
-            alt="AN2B Hero"
-            className="w-full object-cover rounded-xl"
-            style={{ maxHeight: "80vh" }}
-          />
+			  src="/logos/hero-image-new.png"
+			  alt="AN2B Hero"
+			  className="w-full object-cover rounded-xl"
+			  style={{ maxHeight: "80vh" }}
+			/>
+
         </div>
       </section>
 
